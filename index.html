@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deborah Orji | AI Video Creator & Social Media Manager</title>
+<meta name="description" content="Realistic AI videos, UGC-style ads, animation and social media page management for creators and entrepreneurs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1c1024;--plum:#2a1736;--plum2:#38204a;--blush:#f4c6d6;--ivory:#f8f0ea;--muted:#cdbfd6;--orchid:#c58be8;--gold:#e8c37a;
+--serif:'Fraunces',Georgia,serif;--sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--ink);color:var(--ivory);font:400 17px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.4vw,48px);margin-bottom:12px}
+h3{font-size:22px;line-height:1.25}
+.lead{color:var(--muted);max-width:60ch}
+section{padding:96px 0}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--blush);color:var(--ink)}
+.btn.main:hover{background:#fff}
+.btn.ghost{border:1.5px solid var(--orchid);color:var(--ivory)}
+.btn.ghost:hover{background:var(--plum2)}
+/* nav */
+header{position:sticky;top:0;z-index:20;background:rgba(28,16,36,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--plum2)}
+nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-family:var(--serif);font-weight:700;font-size:22px;text-decoration:none}
+.links{display:flex;gap:26px;align-items:center;font-size:15px;font-weight:500}
+.links a{text-decoration:none;color:var(--muted)}
+.links a:hover{color:var(--ivory)}
+.links .btn{padding:9px 20px;color:var(--ink)}
+/* hero */
+.hero{padding:72px 0 96px;background:radial-gradient(900px 500px at 85% 10%,rgba(197,139,232,.28),transparent 60%),radial-gradient(600px 400px at 0 100%,rgba(244,198,214,.12),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,76px);margin-bottom:22px}
+.hero h1 em{font-style:italic;color:var(--blush)}
+.hero p{color:var(--muted);font-size:19px;max-width:52ch;margin-bottom:34px}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.arch{position:relative;aspect-ratio:3/4;border-radius:999px 999px 28px 28px;background:linear-gradient(160deg,var(--plum2),var(--plum));border:2px solid var(--orchid);overflow:hidden;display:grid;place-items:center;font-family:var(--serif);font-size:84px;color:var(--blush);animation:rise 1s ease both}
+.arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:-14px;bottom:36px;background:var(--gold);color:var(--ink);font-weight:700;font-size:14px;padding:10px 16px;border-radius:12px;transform:rotate(-4deg);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+.photo{position:relative}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+/* work */
+.work{background:var(--plum)}
+.group{margin-top:64px}
+.group h3{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+.group h3 span{font:500 14px var(--sans);color:var(--muted)}
+.group>p{color:var(--muted);margin-bottom:26px;max-width:60ch}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:28px}
+figure{background:var(--ink);border:1px solid var(--plum2);border-radius:20px;overflow:hidden}
+.frame{position:relative;aspect-ratio:9/16;background:linear-gradient(160deg,var(--plum2),var(--ink));display:grid;place-items:center}
+.frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.frame .soon{display:none;color:var(--muted);font-size:15px;text-align:center;padding:20px}
+.frame.bad .soon{display:block}
+.frame.bad video{display:none}
+figcaption{padding:16px 18px 20px}
+figcaption b{display:block;font-family:var(--serif);font-size:19px;margin-bottom:2px}
+figcaption small{color:var(--muted);font-size:14px;line-height:1.5;display:block}
+.pages{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.pages a{display:block;padding:24px;border:1px solid var(--orchid);border-radius:20px;text-decoration:none;background:var(--ink);transition:background .2s}
+.pages a:hover{background:var(--plum2)}
+.pages b{font-family:var(--serif);font-size:20px;display:block}
+.pages small{color:var(--muted)}
+/* tools */
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px;margin-top:36px}
+.tool{background:var(--plum);border:1px solid var(--plum2);border-radius:20px;padding:26px 14px 20px;text-align:center;transition:border-color .2s,transform .2s}
+.tool:hover{border-color:var(--orchid);transform:translateY(-3px)}
+.logo-box{position:relative;width:68px;height:68px;margin:0 auto 14px;border-radius:18px;display:grid;place-items:center;font:700 24px var(--serif);color:#fff;overflow:hidden;background:hsl(var(--h) 45% 40%);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.logo-box img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;padding:10px}
+.tool b{font-weight:700;font-size:15px}
+.tool.more{border-style:dashed;display:grid;place-items:center;color:var(--muted);font-family:var(--serif);font-size:18px}
+/* services & pricing */
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.card{padding:30px;border-radius:24px;background:var(--plum);border:1px solid var(--plum2)}
+.card h3{margin-bottom:10px}
+.card p{color:var(--muted);font-size:16px}
+.price{background:var(--plum);}
+.price .amt{font-family:var(--serif);font-size:38px;color:var(--gold);margin:6px 0 14px}
+.price .amt small{font:500 15px var(--sans);color:var(--muted)}
+.price ul{list-style:none;color:var(--muted);font-size:16px}
+.price li{padding:7px 0;border-top:1px solid var(--plum2)}
+.price.best{background:var(--plum2);border-color:var(--gold)}
+.note{margin-top:24px;color:var(--muted);font-size:15px}
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px;counter-reset:s;list-style:none}
+.steps li{counter-increment:s;padding-top:18px;border-top:2px solid var(--orchid)}
+.steps li::before{content:counter(s);font-family:var(--serif);font-size:34px;color:var(--blush);display:block;line-height:1;margin-bottom:10px}
+.steps b{display:block;font-family:var(--serif);font-size:20px;margin-bottom:4px}
+.steps p{color:var(--muted);font-size:16px}
+/* contact */
+.contact{background:linear-gradient(160deg,var(--plum2),var(--plum));text-align:center}
+.contact .lead{margin:0 auto 34px}
+.contact .cta{justify-content:center}
+.mail{display:block;margin-top:26px;color:var(--muted)}
+footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid var(--plum2)}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr}.photo{max-width:340px;margin:0 auto;order:-1}.grid,.cols{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.links a:not(.btn){display:none}}
+@media(max-width:600px){section{padding:64px 0}.grid,.cols,.pages,.steps{grid-template-columns:1fr}.frame{aspect-ratio:9/14}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Deborah Orji</a>
+<div class="links"><a href="#work">Work</a><a href="#services">Services</a><a href="#pricing">Pricing</a><a href="#contact">Contact</a><a class="btn main" href="https://wa.me/233540447813">Hire me</a></div>
+</nav></div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+<div>
+<h1>Realistic AI videos that make people <em>stop scrolling.</em></h1>
+<p>I’m Deborah, an AI video creator and social media page manager. I make AI videos, UGC-style ads and animation for content creators, page owners and entrepreneurs, then help the page grow.</p>
+<div class="cta"><a class="btn main" href="#work">Watch my work</a><a class="btn ghost" href="#pricing">See pricing</a></div>
+</div>
+<div class="photo">
+<div class="arch">DO<img src="photo.jpg" alt="Deborah Orji" onerror="this.remove()"></div>
+<div class="tag">Open for new clients</div>
+</div>
+</div></div>
+
+<section class="work" id="work"><div class="wrap">
+<h2>My work</h2>
+<p class="lead">Every video below was made with AI. Tap play to watch.</p>
+<div id="videos"></div>
+
+<div class="group">
+<h3>Pages I’m growing <span>fully AI-made content</span></h3>
+<p>Pages I manage and grow right now, from content ideas to posting.</p>
+<div class="pages">
+<a href="https://www.facebook.com/share/v/1FVLA6DaDs/" target="_blank" rel="noopener"><b>Facebook video</b><small>Watch a video from a page I manage</small></a>
+<a href="https://vm.tiktok.com/ZN8a2aWno/" target="_blank" rel="noopener"><b>TikTok page</b><small>AI videos made for TikTok</small></a>
+<a href="https://www.facebook.com/share/r/1CP3xwQXY7/" target="_blank" rel="noopener"><b>Facebook reel</b><small>A reel from my growing pages</small></a>
+<a href="https://www.facebook.com/share/19wEwQGAtv/" target="_blank" rel="noopener"><b>My Facebook page</b><small>Follow my latest work</small></a>
+</div></div>
+</div></section>
+
+<section id="tools"><div class="wrap">
+<h2>The AI tools I create with</h2>
+<p class="lead">I choose the best tool for each scene, so every video looks real and fits your brand.</p>
+<div class="tools" id="tools-list"></div>
+</div></section>
+
+<section id="services" style="background:var(--plum)"><div class="wrap">
+<h2>What I can do for you</h2>
+<p class="lead">One creator for your videos, your page and your website.</p>
+<div class="cols">
+<div class="card" style="background:var(--ink)"><h3>Realistic AI videos</h3><p>Lifelike videos for stories, promos and social pages, made to hold attention.</p></div>
+<div class="card" style="background:var(--ink)"><h3>Cartoons and animation</h3><p>Animated characters and story videos, like diaries, explainers and kids’ content.</p></div>
+<div class="card" style="background:var(--ink)"><h3>UGC-style ads</h3><p>Ads that look like real customers made them, built to sell.</p></div>
+<div class="card" style="background:var(--ink)"><h3>Product ads</h3><p>Clean, eye-catching videos that show your product at its best.</p></div>
+<div class="card" style="background:var(--ink)"><h3>Social media management</h3><p>Content planning, posting and growth for your Facebook, TikTok and more.</p></div>
+<div class="card" style="background:var(--ink)"><h3>Website design</h3><p>Professional websites built with AI or WordPress for your brand.</p></div>
+</div></div></section>
+
+<section id="pricing"><div class="wrap">
+<h2>Simple pricing</h2>
+<p class="lead">Clear prices in naira. Every video includes captions, clean audio and your choice of vertical or horizontal format.</p>
+<div class="cols">
+<div class="card price"><h3>Single video</h3><div class="amt">₦25,000 <small>per video</small></div><ul><li>One AI video, up to 30 seconds</li><li>Captions and clean audio</li><li>1 revision</li></ul></div>
+<div class="card price best"><h3>Content pack</h3><div class="amt">₦65,000 <small>for 3 videos</small></div><ul><li>Three videos, up to 30 seconds each</li><li>UGC-style, animation or product ads</li><li>Captions and clean audio</li><li>2 revisions</li></ul></div>
+<div class="card price"><h3>Page management</h3><div class="amt">₦120,000 <small>per month</small></div><ul><li>Content plan and daily posting</li><li>AI videos made for your page</li><li>Captions, hashtags and growth tips</li><li>Monthly performance report</li></ul></div>
+</div>
+<p class="note">Need something different? Send me a message and I’ll quote your project.</p>
+</div></section>
+
+<section style="background:var(--plum)"><div class="wrap">
+<h2>How we work together</h2>
+<ol class="steps">
+<li><b>Tell me your idea</b><p>Share your goal, audience and any examples you like.</p></li>
+<li><b>I plan the video</b><p>I write the script and scenes for your approval.</p></li>
+<li><b>I create it</b><p>I generate, edit and add captions and audio.</p></li>
+<li><b>Review and deliver</b><p>You request changes, then get your final files.</p></li>
+</ol>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+<h2>Let’s make your next video</h2>
+<p class="lead">Tell me about your page or product, and I’ll reply with ideas and a quote.</p>
+<div class="cta"><a class="btn main" href="https://wa.me/233540447813">Message on WhatsApp</a><a class="btn ghost" href="https://www.facebook.com/share/19wEwQGAtv/" target="_blank" rel="noopener">Visit my Facebook</a></div>
+<a class="mail" href="mailto:debbimimi47@gmail.com">debbimimi47@gmail.com &nbsp;|&nbsp; +233 54 044 7813</a>
+</div></section>
+</main>
+<footer>© <span id="yr"></span> Deborah Orji. All videos made with AI.</footer>
+
+<script>
+/* ===== EDIT HERE ===== */
+// Add a video: copy one line, put the file in the "videos" folder, change section/title/note/src.
+const VIDEOS = [
+  {section:"Animation", title:"Animated office diary", note:"A story-style animated video.", src:"videos/office-diary.mp4"},
+  {section:"Realistic and cinematic AI videos", title:"First time preaching in public", note:"A realistic POV skit set in a busy airport.", src:"videos/video-a.mp4", poster:"posters/video-a.jpg"},
+  {section:"Realistic and cinematic AI videos", title:"Hellfire is real", note:"A dramatic, cinematic scene with big visual effects.", src:"videos/video-b.mp4", poster:"posters/video-b.jpg"},
+  {section:"Realistic and cinematic AI videos", title:"The ambulance and the serpent", note:"A suspenseful story scene with a giant snake.", src:"videos/video-c.mp4", poster:"posters/video-c.jpg"},
+  {section:"Realistic and cinematic AI videos", title:"Alone in the rain", note:"A tense, emotional night scene with a lifelike actress.", src:"videos/video-d.mp4", poster:"posters/video-d.jpg"}
+  // To add a video, copy a line above and change section, title, note, src and poster.
+  // New section? Use a new section name, e.g. "Ads for clients" or "Animation".
+];
+const SECTION_INFO = {
+  "Realistic and cinematic AI videos":"Story videos that look real, made entirely with AI.",
+  "Ads for clients":"Product and brand ads made for real clients.",
+  "Animation":"Cartoon and story videos with characters people remember."
+};
+// Logos: drop a PNG in the "logos" folder (e.g. logos/kling.png) and it replaces the letter badge.
+const TOOLS = [
+  {n:"Kling AI",i:"K",h:205,logo:"logos/kling.png"},
+  {n:"Google Veo",i:"V",h:222,logo:"logos/veo.png"},
+  {n:"Runway",i:"R",h:165,logo:"logos/runway.png"},
+  {n:"Hailuo AI",i:"H",h:340,logo:"logos/hailuo.png"},
+  {n:"Seedance",i:"S",h:275,logo:"logos/seedance.png"},
+  {n:"Higgsfield AI",i:"Hf",h:300,logo:"logos/higgsfield.png"},
+  {n:"Grok Imagine",i:"G",h:250,logo:"logos/grok.png"},
+  {n:"Google Flow",i:"F",h:190,logo:"logos/flow.png"},
+  {n:"HeyGen",i:"He",h:320,logo:"logos/heygen.png"},
+  {n:"CapCut",i:"C",h:230,logo:"logos/capcut.png"}
+];
+/* ===================== */
+const root=document.getElementById('videos');
+const groups={};
+VIDEOS.forEach(v=>{(groups[v.section]=groups[v.section]||[]).push(v)});
+Object.keys(groups).forEach(name=>{
+  const g=document.createElement('div');g.className='group';
+  const h=document.createElement('h3');h.textContent=name;
+  const p=document.createElement('p');p.textContent=SECTION_INFO[name]||'';
+  const grid=document.createElement('div');grid.className='grid';
+  groups[name].forEach(v=>{
+    const f=document.createElement('figure');
+    const fr=document.createElement('div');fr.className='frame';
+    const s=document.createElement('span');s.className='soon';s.textContent='Video coming soon';
+    const vid=document.createElement('video');
+    vid.src=v.src;vid.controls=true;vid.preload='metadata';vid.playsInline=true;
+    if(v.poster)vid.poster=v.poster;
+    vid.addEventListener('error',()=>fr.classList.add('bad'));
+    fr.append(s,vid);
+    const c=document.createElement('figcaption');
+    const b=document.createElement('b');b.textContent=v.title;
+    const sm=document.createElement('small');sm.textContent=v.note;
+    c.append(b,sm);f.append(fr,c);grid.append(f);
+  });
+  g.append(h);if(p.textContent)g.append(p);g.append(grid);root.append(g);
+});
+const tl=document.getElementById('tools-list');
+TOOLS.forEach(t=>{
+  const d=document.createElement('div');d.className='tool';
+  const box=document.createElement('div');box.className='logo-box';box.style.setProperty('--h',t.h);box.textContent=t.i;
+  if(t.logo){const im=document.createElement('img');im.src=t.logo;im.alt=t.n+' logo';im.onerror=()=>im.remove();box.append(im)}
+  const b=document.createElement('b');b.textContent=t.n;
+  d.append(box,b);tl.append(d);
+});
+const more=document.createElement('div');more.className='tool more';more.textContent='and many more';tl.append(more);
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
